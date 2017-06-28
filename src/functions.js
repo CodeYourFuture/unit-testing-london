@@ -11,7 +11,7 @@ const functions = {
     get2ndAnd3rd: function(myArray) {
         // myArray is an array. Return an array containing 2nd and 3rd items from myArray
         // make sure myArray remains unchanged.
-        return [myArray[1], myArray[2]]; //array 0 based index
+        return myArray.slice(1, 3); //array 0 based index
     },
 
     mapper: function(myArray) {
@@ -85,6 +85,18 @@ const functions = {
         };
 
         return restaurant;
+    },
+    // a function that accepts 2 arrays as arguments and 
+    //returns a new array which contains all the items from the two inputs.
+    mergeArrays: function(arrayOne, arrayTwo) {
+        var mergedArray = [];
+        arrayOne.forEach(function(element) {
+            mergedArray.push(element);
+        });
+        arrayTwo.forEach(function(element) {
+            mergedArray.push(element);
+        });
+        return mergedArray;
     }
 };
 

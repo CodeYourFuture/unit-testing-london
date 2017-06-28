@@ -92,3 +92,13 @@ test('Book a table', () => {
     restaurant.bookTable();
     expect(restaurant.freeTables).toBe(6);
 });
+
+test('Merge two arrays', () => {
+    const arrayOne = [1, 2, 3];
+    const arrayTwo = [3, 4, 5];
+
+    const output = functions.mergeArrays(arrayOne, arrayTwo);
+    const expected = [1, 2, 3, 3, 4, 5];
+
+    expect(output).toEqual(expected);
+});
