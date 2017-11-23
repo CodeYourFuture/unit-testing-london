@@ -112,10 +112,10 @@ test('Add all numbers', () => {
 });
 
 test('Average', () => {
-  const numbers = [ 4, '-', 8, 11, 'hello', '57', 0, 2 ];
-  const expected = 53;
+  const things = [ 4, '-', 8, 11, 'hello', '57', 0, 2 ];
+  const expected = 5;
 
-  const output = functions.average( numbers );
+  const output = functions.average( things );
 
   expect( output ).toEqual( 5 );
 });
