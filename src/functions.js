@@ -1,8 +1,14 @@
+
+
+
+
 function removeMiddle( words ){
   // words is an array which contains an odd number of strings
   // return a new array containing only the middle word
   // the words array should no longer contain the middle word
   // hint: splice
+
+  return words.splice(Math.floor(words.length/2), 1);
 }
 
 function get2ndAnd3rd( myArray ){
@@ -10,6 +16,10 @@ function get2ndAnd3rd( myArray ){
   // return an array containing the 2nd and 3rd items from myArray
   // myArray should remain unchanged
   // hint: slice
+
+  return sliced = myArray.slice(1,3);
+
+
 }
 
 function mapper( myArray ){
@@ -17,12 +27,28 @@ function mapper( myArray ){
   // return a new array which has all items in myArray incremented by one
   // myArray should remain unchanged
   // hint: map
+
+  function increment (myArrItems){
+    return  ++myArrItems;
+ }
+
+ return mapped = myArray.map(increment);
+
+
 }
 
 function wordLengths( words ){
   // words is an array of strings
   // return a new array that contains the number of letters in each word
   // hint: strings have a 'length' property
+
+  function stringLength (myArrItems){
+    return  myArrItems.length;
+ }
+
+ return numOfLetters = words.map(stringLength);
+
+
 }
 
 function cities( capitals, formatter ){
@@ -36,40 +62,75 @@ function cities( capitals, formatter ){
   // such as 'Paris is the capital of France'
 
   // apply formatter to each object in capitals array and return an array of resulting sentences
+
+var mappedArray = capitals.map(function formatter(myArrItems) {
+      return (myArrItems.city + " is the capital of " + myArrItems.country)});
+      return  mappedArray;
 }
 
 function largerThanTen( numbers ){
   // numbers is an array of numbers
   // return a new array that contains only numbers from the input array which are greater than 10
   // hint: filter
+
+  function filterItems(myArrItems){
+    return  myArrItems > 10;
+ }
+
+    return filtered = numbers.filter(filterItems); 
+
 }
 
 function even( numbers ){
   // numbers is an array of numbers
   // return a new array that contains only even numbers from the input array
   // hint: you may want to use the modulus operator '%'
+
+  function filterEven(myArrItems){
+    return  myArrItems % 2 === 0;
+ }
+
+    return even = numbers.filter(filterEven); 
+
+
 }
 
 function findTheNeedle( words ){
   // words is an array of words
   // return the index of the word 'needle'
   // hint: indexOf
+
+  return words.indexOf('needle');
 }
 
 function findLargest( numbers ){
   // numbers is an array of numbers
   // return the largest number from that array
+  
+  return Math.max.apply(null, numbers);
 }
 
 function addAllnumbers( numbers ) {
   // numbers is an array of numbers
   // return the sum of all the numbers in the array
+  var result = numbers.reduce(function(accumulator, currentValue) {
+    return accumulator + currentValue;
+});
+
+    return result;
+ 
 }
 
 function average( things ) {
   // things is an array of numbers and strings
   // return the average of all the numbers
   // be sure to exclude the strings
+  var sum;
+  things.forEach(function(n){
+    sum += n ; 
+    avg = sum / things.length;
+  });
+  return avg;
 }
 
 function paintShop( cars, colour ){
@@ -144,5 +205,6 @@ module.exports = {
   average,
   paintShop,
   sales,
-  secondLargest
+  secondLargest,
+  factorial
 };
