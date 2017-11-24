@@ -24,10 +24,10 @@ function mapper(myArray) {
     // myArray should remain unchanged
     // hint: map
 
-    var incrementedByOne = myArray.map(function(num) {
+    return myArray.map(function(num) {
         return num + 1;
     });
-    return incrementedByOne;
+
 }
 
 function wordLengths(words) {
@@ -40,11 +40,9 @@ function wordLengths(words) {
           leng.push(word.length);
         })
         return leng;                           another method with loop                           */
-
-    var numbOfLetters = words.map(function(word) {
+    return words.map(function(word) {
         return word.length
     });
-    return numbOfLetters;
 }
 
 function cities(capitals, formatter) {
@@ -59,10 +57,9 @@ function cities(capitals, formatter) {
 
     // apply formatter to each object in capitals array and return an array of resulting sentences
 
-    var transform = capitals.map(function formatter(item) {
+    return capitals.map(function formatter(item) {
         return (item.city + ' is the capital of ' + item.country);
     });
-    return transform
 }
 
 
@@ -71,10 +68,9 @@ function largerThanTen(numbers) {
     // return a new array that contains only numbers from the input array which are greater than 10
     // hint: filter
 
-    var higherThanTen = numbers.filter(function(number) {
+    return numbers.filter(function(number) {
         return number > 10;
     });
-    return higherThanTen;
 }
 
 function even(numbers) {
@@ -82,10 +78,9 @@ function even(numbers) {
     // return a new array that contains only even numbers from the input array
     // hint: you may want to use the modulus operator '%'
 
-    var onlyEven = numbers.filter(function(item) {
+    return numbers.filter(function(item) {
         return item % 2 === 0;
     });
-    return onlyEven;
 }
 
 function findTheNeedle(words) {
@@ -100,18 +95,19 @@ function findLargest(numbers) {
     // numbers is an array of numbers
     // return the largest number from that array
 
-    var sorted = numbers.sort(function(a, b) { return a - b });
-    return sorted.pop();
+    // var sorted = numbers.sort(function(a, b) { return a - b });  another method
+    // return sorted.pop();
+
+    return Math.max(...numbers);
 }
 
 function addAllnumbers(numbers) {
     // numbers is an array of numbers
     // return the sum of all the numbers in the array
 
-    var result = numbers.reduce(function(a, b) {
+    return numbers.reduce(function(a, b) {
         return a + b;
     });
-    return result;
 }
 
 function average(things) {
@@ -155,6 +151,15 @@ function paintShop(cars, colour) {
 
     // the original array passed in should not change
     // hint: look up 'Cloning objects in JavaScript'
+
+    var tempCars = [];
+    cars.map(function(item) {
+        tempCars.push(Object.assign({}, item));
+    });
+    tempCars.map(function(items) {
+        items.colour = colour;
+    })
+    return tempCars;
 }
 
 function sales(cars) {
@@ -176,6 +181,13 @@ function sales(cars) {
     //   'Ford': 20000,
     //   'Vauxhall': 15000
     // }
+
+    var resultOfSale = {};
+    cars.forEach(function(item) {
+        resultOfSale[item.make] = resultOfSale[item.make] || 0;
+        resultOfSale[item.make] += item.price;
+    });
+    return resultOfSale;
 }
 
 // Harder challenges
@@ -183,6 +195,11 @@ function secondLargest(numbers) {
     // numbers is an array of numbers
     // return the index of the second 
     // largest number in the array
+
+    var firstMax = Math.max(...numbers);
+    numbers.splice(numbers.indexOf(firstMax), 1);
+    var secondMax = Math.max(...numbers);
+    return numbers.indexOf(secondMax);
 }
 
 function factorial(int) {
@@ -195,6 +212,17 @@ function factorial(int) {
 
     // calculate and return the factorial of int
     // note: factorial of 0 is 1
+
+    if (int < 0) {
+        return -1;
+    } else if (int === 0 || int === 1) {
+        return 1;
+    } else {
+        for (var i = int - 1; i >= 1; i--) {
+            int *= i;
+        }
+    }
+    return int;
 }
 
 module.exports = {
@@ -211,5 +239,6 @@ module.exports = {
     average,
     paintShop,
     sales,
-    secondLargest
+    secondLargest,
+    factorial
 };
