@@ -4,7 +4,7 @@ function removeMiddle( words ){
   // return a new array containing only the middle word
   // the words array should no longer contain the middle word
   // hint: splice
-  return words.splice(Math.ceil(words.length / 2), 1);
+  return words.splice(Math.floor(words.length / 2), 1);
 }
 
 function get2ndAnd3rd( myArray ){
@@ -105,12 +105,28 @@ function findLargest( numbers ){
 function addAllnumbers( numbers ) {
   // numbers is an array of numbers
   // return the sum of all the numbers in the array
+
+    var sum = numbers.reduce( function( sum, num ) {
+      return sum += num;
+    });
+    return sum;
 }
 
 function average( things ) {
   // things is an array of numbers and strings
   // return the average of all the numbers
   // be sure to exclude the strings
+
+  var totalNumEle = 0;
+  var numSum = 0;
+  for( i=0; i<num.length; i++ ) {
+    var numElement = num[i];
+    if( Number.isInteger( numElement )) {
+      numSum += numElement;
+      totalNumEle++;
+    }
+  }
+  return numSum / totalNumEle;
 }
 
 function paintShop( cars, colour ){
