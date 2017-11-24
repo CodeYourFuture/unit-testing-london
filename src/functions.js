@@ -159,11 +159,9 @@ function secondLargest( numbers ){
   // return the index of the second 
   // largest number in the array
   
-  var x= Math.max(...numbers)
-  var m = numbers.indexOf(x)
-  numbers.splice(m, 1);
-  var s = Math.max(...numbers);
-  return secondLargestIndex = numbers.indexOf(s);
+  var x= numbers.indexOf(Math.max(...numbers))
+  numbers[x]=-Infinity;     
+  return numbers.indexOf(Math.max(...numbers));
   
 }
 
