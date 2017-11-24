@@ -1,6 +1,6 @@
 const functions = require('../src/functions');
 
-test('Check', () => {
+test('Test', () => {
   expect(true).toEqual(true);
 });
 
