@@ -119,8 +119,8 @@ function average( things ) {
 
   var totalNumEle = 0;
   var numSum = 0;
-  for( i=0; i<num.length; i++ ) {
-    var numElement = num[i];
+  for( i=0; i < things.length; i++ ) {
+    var numElement = things[i];
     if( Number.isInteger( numElement )) {
       numSum += numElement;
       totalNumEle++;
@@ -209,7 +209,7 @@ function secondLargest( numbers ){
       sLargestNum = numbers[i];
     } 
   }
-  return sLargestNum;
+  return numbers.indexOf(sLargestNum);
 
 }
 
