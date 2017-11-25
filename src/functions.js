@@ -145,6 +145,19 @@ function paintShop( cars, colour ){
 
   // the original array passed in should not change
   // hint: look up 'Cloning objects in JavaScript'
+
+  var resultArr = [];
+
+  cars.forEach( function( car ){
+      resultArr.push( Object.assign( {}, car ));
+
+    });
+
+    resultArr.forEach( function( car ){
+        car.colour = colour;
+    });
+
+    return resultArr;
 }
 
 function sales( cars ){
@@ -166,6 +179,17 @@ function sales( cars ){
   //   'Ford': 20000,
   //   'Vauxhall': 15000
   // }
+
+  var totalSale = {};
+  
+  cars.forEach( function( currentVal, index, arr ) {
+    totalSale[currentVal.make] = totalSale[currentVal.make] || 0;
+    totalSale[currentVal.make] += currentVal.price;
+  });
+
+  return totalSale;
+
+
 }
 
 // Harder challenges
@@ -174,6 +198,18 @@ function secondLargest( numbers ){
   // return the index of the second 
   // largest number in the array
 
+  var largestNum = 0,
+      sLargestNum = 0;
+
+  for ( var i = 0; i < numbers.length; i++ ) {
+    if ( largestNum < numbers[i] ) {
+      sLargestNum = largestNum;
+      largestNum = numbers[i];
+    } else if ( sLargestNum < numbers[i] ) {
+      sLargestNum = numbers[i];
+    } 
+  }
+  return sLargestNum;
 
 }
 
