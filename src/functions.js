@@ -1,7 +1,3 @@
-
-
-
-
 function removeMiddle( words ){
   // words is an array which contains an odd number of strings
   // return a new array containing only the middle word
@@ -64,7 +60,8 @@ function cities( capitals, formatter ){
   // apply formatter to each object in capitals array and return an array of resulting sentences
 
 var mappedArray = capitals.map(function formatter(myArrItems) {
-      return (myArrItems.city + " is the capital of " + myArrItems.country)});
+      return (myArrItems.city + " is the capital of " + myArrItems.country)
+    });
       return  mappedArray;
 }
 
@@ -125,12 +122,15 @@ function average( things ) {
   // things is an array of numbers and strings
   // return the average of all the numbers
   // be sure to exclude the strings
-  var sum;
-  things.forEach(function(n){
-    sum += n ; 
-    avg = sum / things.length;
+  
+  var filtered =  things.filter(function (myArrItems) {
+        return typeof myArrItems === "number";
+      });
+     var result = filtered.reduce(function(accumulator, currentValue) {
+      return accumulator + currentValue;
   });
-  return avg;
+     return result/filtered.length;
+  
 }
 
 function paintShop( cars, colour ){
@@ -144,11 +144,22 @@ function paintShop( cars, colour ){
   //   color: 'red'
   // }
 
-  // set the colour of each Ford car to be the colour 
+  // set the colour of each car to be the colour 
   // passed in and return the new array
 
   // the original array passed in should not change
   // hint: look up 'Cloning objects in JavaScript'
+    var paintedWith =[];
+    cars.forEach(function(element) {
+        paintedWith.push(Object.assign({}, element));
+    });
+    paintedWith.forEach(function(element){
+      element.colour = colour;
+    });
+
+    return paintedWith;
+  
+
 }
 
 function sales( cars ){
@@ -170,6 +181,14 @@ function sales( cars ){
   //   'Ford': 20000,
   //   'Vauxhall': 15000
   // }
+  totalSale = {};
+  cars.forEach(function(element){
+    totalSale[element.make] =  totalSale[element.make] || 0;
+    totalSale[element.make] += element.price;
+  });
+
+  return totalSale;
+
 }
 
 // Harder challenges
@@ -177,6 +196,13 @@ function secondLargest( numbers ){
   // numbers is an array of numbers
   // return the index of the second 
   // largest number in the array
+   var max= numbers.indexOf(Math.max(...numbers))
+  
+   numbers.splice(max, 1);  
+
+   return numbers.indexOf(Math.max(...numbers));
+
+
 }
 
 function factorial( int ) {
@@ -189,6 +215,14 @@ function factorial( int ) {
 
   // calculate and return the factorial of int
   // note: factorial of 0 is 1
+  if(int === 0 || int === 1){
+    return 1;
+  }
+  else if( int < 0) {
+    return undefined;
+  }
+    return int*factorial(int-1);
+  
 }
 
 module.exports = {
