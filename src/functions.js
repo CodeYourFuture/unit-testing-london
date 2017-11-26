@@ -19,21 +19,19 @@ function mapper( myArray ){
   // return a new array which has all items in myArray incremented by one
   // myArray should remain unchanged
   // hint: map
-  var incremented = myArray.map(function(a){
-    return a += 1;
-  });
-  return incremented;
+  return myArray.map(function(a){return a += 1});
 }
 
 function wordLengths( words ){
   // words is an array of strings
   // return a new array that contains the number of letters in each word
   // hint: strings have a 'length' property
-  var num = [];
-  words.forEach(function(arr){
-    num.push(arr.length);
-  });
-  return num;
+  // var num = [];
+  // words.forEach(function(arr){
+  //   num.push(arr.length);
+  // });
+  // return num;
+  return words.map(function(el) {return el.length});
 }
 
 function cities( capitals, formatter ){
@@ -165,12 +163,14 @@ function secondLargest( numbers ){
   var max = numbers.reduce(function(a, b) {return Math.max(a, b)});
   numbers.splice(numbers.indexOf(max), 1);
   var secondMax = numbers.reduce(function(a, b) {return Math.max(a, b)});
+  
+  return numbers.indexOf(secondMax);
 
-  for(var i = 0; i < numbers.length; i++){
-    if(numbers[i] === secondMax){
-      return i;
-    }
-  }
+  // for(var i = 0; i < numbers.length; i++){
+  //   if(numbers[i] === secondMax){
+  //     return i;
+  //   }
+  // }
 }
 
 function factorial( int ) {
