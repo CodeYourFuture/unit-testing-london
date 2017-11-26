@@ -1,9 +1,13 @@
+
+
 function removeMiddle( words ){
   // words is an array which contains an odd number of strings
   // return a new array containing only the middle word
   // the words array should no longer contain the middle word
   // hint: splice
 }
+// <........................................Answer............................................./>
+// <........................................Answer............................................./>
 
 function get2ndAnd3rd( myArray ){
   // myArray is an array of numbers
@@ -12,18 +16,53 @@ function get2ndAnd3rd( myArray ){
   // hint: slice
 }
 
+// <.......................................Answer.............................................../>
+
+function get2ndAnd3rd( myArray ){
+        myArray = [ 90, 5, 11, 5, 6 ];
+        var sliced =  myArray.slice(1, 3);
+        return myArray.slice(1, 3);
+}
+console.log(sliced);
+
+// <.......................................Answer.............................................../>
+
+
 function mapper( myArray ){
   // myArray is an array of numbers
   // return a new array which has all items in myArray incremented by one
   // myArray should remain unchanged
   // hint: map
 }
+// <.......................................Answer.............................................../>
 
-function wordLengths( words ){
-  // words is an array of strings
-  // return a new array that contains the number of letters in each word
-  // hint: strings have a 'length' property
+function  mapper( myArray ){
+    myArray = [ 90, 5, 11, 5, 6 ];
+    var myArray = [ 90, 5, 11, 5, 6 ];
+    myArray = myArray.map(function(i){return ++i;});
 }
+console.log(myArray);
+// <.......................................Answer.............................................../>
+
+// function getWordLenghts (words) {
+   
+//   var n = [ 'sun', 'potato', 'roundabout', 'pizza' ];
+
+//   for (var i = 0; i < words.length; i++) {
+//     if (n[i].length >getWordLenghts) {
+//       n = words[i].length;
+//     }
+//   }
+
+//   return getWordLenghts;
+// }
+
+// var words = [ 'sun', 'potato', 'roundabout', 'pizza' ];
+// var n = words.length;
+// console.log(n);
+
+// <.......................................Answer.............................................../>
+
 
 function cities( capitals, formatter ){
   // capitals is an array of objects that have a city and country property
