@@ -28,6 +28,7 @@ test('Get second and third', () => {
   expect(numbers).toEqual(expectedNumbers);
 });
 
+
 test('Add 1 to each item in myArray', () => {
   const myArray = [ 31, 57, 12, 5];
 
