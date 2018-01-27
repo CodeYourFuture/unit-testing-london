@@ -3,6 +3,8 @@ function removeMiddle( words ){
   // return a new array containing only the middle word
   // the words array should no longer contain the middle word
   // hint: splice
+  var middleIndex = Math.floor(words.length / 2)
+  return words.splice(middleIndex, 1)
 }
 
 function get2ndAnd3rd( myArray ){
