@@ -3,6 +3,7 @@ function removeMiddle( words ){
   // return a new array containing only the middle word
   // the words array should no longer contain the middle word
   // hint: splice
+  return words.splice(Math.floor(words.length/2),1);
 }
 
 function get2ndAnd3rd( myArray ){
@@ -10,6 +11,7 @@ function get2ndAnd3rd( myArray ){
   // return an array containing the 2nd and 3rd items from myArray
   // myArray should remain unchanged
   // hint: slice
+  
 }
 
 function mapper( myArray ){
