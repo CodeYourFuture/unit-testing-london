@@ -1,4 +1,4 @@
-function removeMiddle( words ){
+function removeMiddle(words) {
   // words is an array which contains an odd number of strings
   // return a new array containing only the middle word
   // the words array should no longer contain the middle word
@@ -7,7 +7,7 @@ function removeMiddle( words ){
   return newWord;
 }
 
-function get2ndAnd3rd( myArray ){
+function get2ndAnd3rd(myArray) {
   // myArray is an array of numbers
   // return an array containing the 2nd and 3rd items from myArray
   // myArray should remain unchanged
@@ -16,7 +16,7 @@ function get2ndAnd3rd( myArray ){
   return newArray;
 }
 
-function mapper( myArray ){
+function mapper(myArray) {
   // myArray is an array of numbers
   // return a new array which has all items in myArray incremented by one
   // myArray should remain unchanged
@@ -27,7 +27,7 @@ function mapper( myArray ){
   return newArray;
 }
 
-function wordLengths( words ){
+function wordLengths(words) {
   // words is an array of strings
   // return a new array that contains the number of letters in each word
   // hint: strings have a 'length' property
@@ -49,12 +49,12 @@ function cities( capitals, transform ){
   // such as 'Paris is the capital of France'
 
   // apply formatter to each object in capitals array and return an array of resulting sentences
-  var newArr = [];
-  for (i = 0; i < capitals.length; i++) {
-    newArr[i] = transform(capitals[i]);
-  };
-  return newArr;
-}
+//   var newArr = [];
+//   for (i = 0; i < capitals.length; i++){
+//     newArr[i] = capitals.push(transform);
+//   };
+//   return newArr;
+// }
 
 function largerThanTen( numbers ){
   // numbers is an array of numbers
