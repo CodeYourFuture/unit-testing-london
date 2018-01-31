@@ -38,7 +38,7 @@ function wordLengths( words ){
   return newArr;
 }
 
-function cities( capitals, transform ){
+function cities( capitals, formatter ){
   // capitals is an array of objects that have a city and country property
   // for example
   // {
@@ -51,37 +51,62 @@ function cities( capitals, transform ){
   // apply formatter to each object in capitals array and return an array of resulting sentences
   var newArr = [];
   for (i = 0; i < capitals.length; i++) {
-    newArr[i] = transform(capitals[i]);
+    newArr[i] = formatter(capitals[i]);
   };
   return newArr;
 }
 
-function largerThanTen( numbers ){
+function largerThanTen(numbers) {
   // numbers is an array of numbers
   // return a new array that contains only numbers from the input array which are greater than 10
   // hint: filter
+  var newArr = numbers.filter(function (item) {
+    return item > 10;
+  });
+  return newArr;
 }
 
-function even( numbers ){
+function even(numbers) {
   // numbers is an array of numbers
   // return a new array that contains only even numbers from the input array
   // hint: you may want to use the modulus operator '%'
+  var newArr = [];
+  for (i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 == 0) {
+      newArr.push(numbers[i]);
+    } else { continue }
+  };
+  return newArr;
 }
 
-function findTheNeedle( words ){
+function findTheNeedle(words) {
   // words is an array of words
   // return the index of the word 'needle'
   // hint: indexOf
+  var index = words.indexOf('needle');
+  return index;
 }
 
-function findLargest( numbers ){
+function findLargest(numbers) {
   // numbers is an array of numbers
   // return the largest number from that array
+  var num = numbers
+  for (i = 0; i < num.length; i++) {
+    if (num[i] > num[
+      0]) {
+      num[0] = num[i];
+    };
+  };
+  return num[0];
 }
 
 function addAllnumbers( numbers ) {
   // numbers is an array of numbers
   // return the sum of all the numbers in the array
+  var result = numbers.reduce(function(sum, curent){
+    return sum + curent;
+  });
+  return result;
 }
 
 function average( things ) {
