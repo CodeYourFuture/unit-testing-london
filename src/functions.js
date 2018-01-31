@@ -109,10 +109,19 @@ function addAllnumbers( numbers ) {
   return result;
 }
 
-function average( things ) {
+function average(things) {
   // things is an array of numbers and strings
   // return the average of all the numbers
   // be sure to exclude the strings
+  sum = 0;
+  num = 0;
+  for (i = 0; i < things.length; i++) {
+    if (typeof (things[i]) === 'number') {
+      sum = sum + things[i];
+      num = num + 1;
+    };
+  };
+  return sum / num
 }
 
 function paintShop( cars, colour ){
