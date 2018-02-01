@@ -140,6 +140,14 @@ function paintShop( cars, colour ){
 
   // the original array passed in should not change
   // hint: look up 'Cloning objects in JavaScript'
+  var copy = [];
+  for (i = 0; i < cars.length; i++) {
+    copy[i] = Object.assign({}, cars[i]);
+    if (copy[i].make === 'Ford') {
+      copy[i].colour = colour;
+    };
+  };
+  return copy;
 }
 
 function sales( cars ){
@@ -161,16 +169,40 @@ function sales( cars ){
   //   'Ford': 20000,
   //   'Vauxhall': 15000
   // }
+  // var sale = {};
+  // var temp = 0;
+  // for (i=0; i < cars.length, i++){
+    
+  // }
+  var newObj = { 'Ford': 0, 'Land Rover': 0, 'Toyota': 0, 'Honda': 0 };
+  for (var i = 0; i < cars.length; i++) {
+    for (var key in cars[i]) {
+      if (cars[i][key] === 'Ford') newObj['Ford'] += cars[i]['price']
+      if (cars[i][key] === 'Land Rover') newObj['Land Rover'] += cars[i]['price']
+      if (cars[i][key] === 'Toyota') newObj['Toyota'] += cars[i]['price']
+      if (cars[i][key] === 'Honda') newObj['Honda'] += cars[i]['price']
+    }
+  }
+  return newObj;
 }
 
 // Harder challenges
-function secondLargest( numbers ){
+function secondLargest(numbers) {
   // numbers is an array of numbers
   // return the index of the second 
   // largest number in the array
+  var max = 0;
+  var secMax = 0;
+  for (i = 0; i < numbers.length; i++) {
+    if (numbers[i] > max) {
+      secMax = max;
+      max = numbers[i];
+    };
+  };
+  return numbers.indexOf(secMax);
 }
 
-function factorial( int ) {
+function factorial(int) {
   // int is an integer
   // a factorial is the product of all non-negative integers
   // less than or equal to the iniital number.
@@ -180,6 +212,11 @@ function factorial( int ) {
 
   // calculate and return the factorial of int
   // note: factorial of 0 is 1
+  var result = 1;
+  while (int) {
+    result *= int--;
+  }
+  return result;
 }
 
 module.exports = {
@@ -196,5 +233,6 @@ module.exports = {
   average,
   paintShop,
   sales,
-  secondLargest
+  secondLargest,
+  factorial
 };
