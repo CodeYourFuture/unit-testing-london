@@ -3,28 +3,38 @@ function removeMiddle( words ){
   // return a new array containing only the middle word
   // the words array should no longer contain the middle word
   // hint: splice
-}
-
-function get2ndAnd3rd( myArray ){
+  return words.splice(2, 1);
+  }
+  
+  function get2ndAnd3rd( myArray ){
   // myArray is an array of numbers
   // return an array containing the 2nd and 3rd items from myArray
   // myArray should remain unchanged
   // hint: slice
-}
-
-function mapper( myArray ){
+  return myArray.slice(1,3);
+  }
+  
+  function mapper( myArray ){
   // myArray is an array of numbers
   // return a new array which has all items in myArray incremented by one
-  // myArray should remain unchanged
+  // myArray should remain unchangedvar newArray 
   // hint: map
-}
-
-function wordLengths( words ){
+  var newArray= myArray.map(function(i){
+  return i+= 1;
+  });
+  return newArray
+  }
+  
+  function wordLengths( words ){
   // words is an array of strings
   // return a new array that contains the number of letters in each word
   // hint: strings have a 'length' property
-}
-
+  var newArray =[];
+  for (i = 0; i < words.length; i++) {
+  newArray[i] = words[i].length;
+  };
+  return newArray;
+  }
 function cities( capitals, formatter ){
   // capitals is an array of objects that have a city and country property
   // for example
