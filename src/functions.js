@@ -96,13 +96,10 @@ console.log(largerThanTen(numbers))
 
 function even( numbers ){
 
-  for (var i = 0; i < numbers.length; ++i) {
-    if (numbers[i] % 2 ===0) {
-      var evv = []
-      evv.push(numbers[i])
-        return numbers
-        }
-    }
+  return numbers.filter(x %2 ===0)
+        
+        
+    
           // numbers is an array of numbers
   // return a new array that contains only even numbers from the input array
   // hint: you may want to use the modulus operator '%'
