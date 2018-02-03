@@ -1,31 +1,73 @@
 function removeMiddle( words ){
-  // words is an array which contains an odd number of strings
-  // return a new array containing only the middle word
-  // the words array should no longer contain the middle word
-  // hint: splice
+  remove = words.splice(2, 1)
+       
+  return words
+// words is an array which contains an odd number of strings
+// return a new array containing only the middle word
+// the words array should no longer contain the middle word
+// hint: splice
 }
+console.log(removeMiddle(words))
+
+
+
+
 
 function get2ndAnd3rd( myArray ){
+  newn = myArray.slice(2, 4)
+  return newn
+
   // myArray is an array of numbers
   // return an array containing the 2nd and 3rd items from myArray
   // myArray should remain unchanged
   // hint: slice
 }
+console.log(myArray)
+
+console.log(get2ndAnd3rd(myArray))
+
+
 
 function mapper( myArray ){
+
+  var addone = myArray.map(x => x + 1)
+  return addone
+
+ }
+// myArray is an array of numbers
+// return a new array which has all items in myArray incremented by one
+// myArray should remain unchanged
+// hint: map
+
+console.log(mapper(myArray))
+
   // myArray is an array of numbers
   // return a new array which has all items in myArray incremented by one
   // myArray should remain unchanged
   // hint: map
-}
+
 
 function wordLengths( words ){
-  // words is an array of strings
-  // return a new array that contains the number of letters in each word
-  // hint: strings have a 'length' property
+
+  nnn =words.map(x => x.length);   
+  return nnn
+ 
+
+
+// words is an array of strings
+// return a new array that contains the number of letters in each word
+// hint: strings have a 'length' property
+//  const expected = [ 3, 6, 10, 5 ];
+
 }
+console.log(wordLengths(words))
+
+
 
 function cities( capitals, formatter ){
+  for (i=0; i<capitals.length; ++i)
+return (capitals[i].city + " " + "is capital of" + " " + capitals[i].country)
+
   // capitals is an array of objects that have a city and country property
   // for example
   // {
@@ -38,17 +80,36 @@ function cities( capitals, formatter ){
   // apply formatter to each object in capitals array and return an array of resulting sentences
 }
 
+console.log(cities(capitals))
+
+  
+
 function largerThanTen( numbers ){
+  return numbers.filter(x => x >10)
   // numbers is an array of numbers
   // return a new array that contains only numbers from the input array which are greater than 10
   // hint: filter
-}
+};
+console.log(largerThanTen(numbers))
+
+
 
 function even( numbers ){
-  // numbers is an array of numbers
+
+  for (var i = 0; i < numbers.length; ++i) {
+    if (numbers[i] % 2 ===0) {
+      var evv = []
+      evv.push(numbers[i])
+        return numbers
+        }
+    }
+          // numbers is an array of numbers
   // return a new array that contains only even numbers from the input array
   // hint: you may want to use the modulus operator '%'
 }
+console.log(even(numbers))
+
+
 
 function findTheNeedle( words ){
   // words is an array of words
