@@ -40,6 +40,18 @@ test('Get second and third', () => {
   expect(numbers).toEqual(expectedNumbers);
 });
 
+test('Get second and third', () => {
+  const numbers = [ 90, 5, 11, 5, 6, 34, 54 ];
+
+  const expectedOutput = [ 5, 11];
+  const expectedNumbers = [ 90, 5, 11, 5, 6, 34, 54 ];
+
+  const output = functions.get2ndAnd3rd( numbers );
+
+  expect(output).toEqual(expectedOutput);
+  expect(numbers).toEqual(expectedNumbers);
+});
+
 test('Add 1 to each item in myArray', () => {
   const myArray = [ 31, 57, 12, 5];
 
