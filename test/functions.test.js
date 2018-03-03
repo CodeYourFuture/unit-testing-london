@@ -16,6 +16,18 @@ test('Remove middle', () => {
   expect(words).toEqual(expectedWords);
 });
 
+test('Remove middle in a 3 words array', () => {
+  const words = [ 'mouse', 'giraffe', 'queen'];
+
+  const expectedWords = [ 'mouse', 'queen'];
+  const expectedOutput = [ 'giraffe' ];
+
+  const output = functions.removeMiddle( words );
+
+  expect(output).toEqual(expectedOutput);
+  expect(words).toEqual(expectedWords);
+});
+
 test('Get second and third', () => {
   const numbers = [ 90, 5, 11, 5, 6 ];
 
