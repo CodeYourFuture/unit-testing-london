@@ -28,6 +28,18 @@ test('Remove middle in a 3 words array', () => {
   expect(words).toEqual(expectedWords);
 });
 
+test('Make all letters in array uppercase', () => {
+  const letters = [ 'm', 'H', 'a', 'q', 't', 'R'];
+
+  const capitalLetters = [ 'M', 'H', 'A', 'Q', 'T', 'R'];
+  const expectedLetters = [ 'm', 'H', 'a', 'q', 't', 'R'];
+
+  const output = functions.makeUppercase( letters );
+
+  expect(output).toEqual(capitalLetters);
+  expect(letters).toEqual(expectedLetters);
+})
+
 test('Get second and third', () => {
   const numbers = [ 90, 5, 11, 5, 6 ];
 
@@ -57,6 +69,18 @@ test('Add 1 to each item in myArray', () => {
 
   const unchanged = [ 31, 57, 12, 5];
   const expected = [ 32, 58, 13, 6];
+  const output = functions.mapper( myArray );
+
+
+  expect(output).toEqual(expected);
+  expect(myArray).toEqual(unchanged);
+});
+
+test('Add 1 to each item in myArray2', () => {
+  const myArray = [ 31, 57, 12, 5, -20, 200, 4500, -59];
+
+  const unchanged = [ 31, 57, 12, 5, -20, 200, 4500, -59];
+  const expected = [ 32, 58, 13, 6, -19, 201, 4501, -58];
   const output = functions.mapper( myArray );
 
 

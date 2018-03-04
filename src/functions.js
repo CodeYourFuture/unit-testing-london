@@ -24,17 +24,27 @@ function removeMiddle( words ){
   });
   return newArray
   }
+
+  function makeUppercase(letters) {
+    //make all letters uppercase if they are not
+    var capitalLetters= letters.map(function(letter){
+return letter.toUpperCase() 
+    });
+    return capitalLetters
+  }
+
   
   function wordLengths( words ){
   // words is an array of strings
   // return a new array that contains the number of letters in each word
   // hint: strings have a 'length' property
-  var newArray =[];
-  for (i = 0; i < words.length; i++) {
-  newArray[i] = words[i].length;
+ 
+   for (i = 0; i < words.length; i++) {
+  words[i] = words[i].length;
   };
-  return newArray;
+  return words;
   }
+
 function cities( capitals, formatter ){
   // capitals is an array of objects that have a city and country property
   // for example
@@ -46,14 +56,32 @@ function cities( capitals, formatter ){
   // such as 'Paris is the capital of France'
 
   // apply formatter to each object in capitals array and return an array of resulting sentences
+
+  
+
+  for (i=0; i<capitals.length; i++){
+
+   
+
+  capitals[i] = formatter(capitals[i]);
+};
+  
+   return capitals;
+
 }
 
 function largerThanTen( numbers ){
   // numbers is an array of numbers
   // return a new array that contains only numbers from the input array which are greater than 10
   // hint: filter
-}
+  var filteredArr = numbers.filter(function(num){
+    return num>10;
 
+  
+});
+return filteredArr
+
+}
 function even( numbers ){
   // numbers is an array of numbers
   // return a new array that contains only even numbers from the input array
@@ -98,6 +126,20 @@ function paintShop( cars, colour ){
 
   // the original array passed in should not change
   // hint: look up 'Cloning objects in JavaScript'
+  
+  var newArr =[];
+  for (i=0; i<cars.length; i++){
+
+    paintedcars = Object.assign({}, cars[i]);
+    if (paintedcars.make == 'Ford'){
+
+       paintedcars.colour = colour
+
+
+    }
+    newArr.push(paintedcars)
+    }
+    return newArr
 }
 
 function sales( cars ){
@@ -155,5 +197,6 @@ module.exports = {
   paintShop,
   sales,
   secondLargest,
-  factorial
+  factorial,
+  makeUppercase
 };
