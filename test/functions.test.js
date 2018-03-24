@@ -137,9 +137,9 @@ test('Paint shop', () => {
 
   const repaintedCars = [
     { make: 'Ford', model: 'Fiesta', colour: 'Pink' },
-    { make: 'Land Rover', model: 'Defender', colour: 'Pink' },
-    { make: 'Toyota', model: 'Prius', colour: 'Pink' },
-    { make: 'Honda', model: 'Civic', colour: 'Pink' }
+    { make: 'Land Rover', model: 'Defender', colour: 'Muddy' },
+    { make: 'Toyota', model: 'Prius', colour: 'Silver' },
+    { make: 'Honda', model: 'Civic', colour: 'Yellow' }
   ];
 
   const output = functions.paintShop( cars, 'Pink' );
