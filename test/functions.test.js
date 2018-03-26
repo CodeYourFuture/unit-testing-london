@@ -108,16 +108,16 @@ test('Add all numbers', () => {
 
   const output = functions.addAllnumbers( numbers );
 
-  expect( output ).toEqual( 53 );
+  expect( output ).toEqual( expected );
 });
 
 test('Average', () => {
   const numbers = [ 4, '-', 8, 11, 'hello', '57', 0, 2 ];
-  const expected = 53;
+  const expected = 5;
 
   const output = functions.average( numbers );
 
-  expect( output ).toEqual( 5 );
+  expect( output ).toEqual( expected );
 });
 
 test('Paint shop', () => {
@@ -137,9 +137,9 @@ test('Paint shop', () => {
 
   const repaintedCars = [
     { make: 'Ford', model: 'Fiesta', colour: 'Pink' },
-    { make: 'Land Rover', model: 'Defender', colour: 'Pink' },
-    { make: 'Toyota', model: 'Prius', colour: 'Pink' },
-    { make: 'Honda', model: 'Civic', colour: 'Pink' }
+    { make: 'Land Rover', model: 'Defender', colour: 'Muddy' },
+    { make: 'Toyota', model: 'Prius', colour: 'Silver' },
+    { make: 'Honda', model: 'Civic', colour: 'Yellow' }
   ];
 
   const output = functions.paintShop( cars, 'Pink' );
@@ -165,7 +165,7 @@ test('Car sales', () => {
     'Land Rover': 21000,
     'Toyota': 6500
   };
-  
+
   const output = functions.sales( carsSold );
 
   expect( output ).toEqual( totals );
@@ -207,7 +207,3 @@ test('Factorial', () => {
   expect( out4 ).toEqual( exp4 );
   expect( out5 ).toEqual( exp5 );
 });
-
-
-
-

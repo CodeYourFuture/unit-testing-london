@@ -38,6 +38,7 @@ function wordLengths( words ){
       return newarr
         }
 
+
 ////////////////////////////
 
 //             var arr = words.map(x => x.lenght )
@@ -51,6 +52,7 @@ function wordLengths( words ){
        // words is an array of strings
   // return a new array that contains the number of letters in each word
   // hint: strings have a 'length' property
+
 
 function cities( capitals, formatter ){
 
@@ -69,6 +71,8 @@ function cities( capitals, formatter ){
 
   // apply formatter to each object in capitals array and return an array of resulting sentences
 }
+
+
 
 function largerThanTen( numbers ){
       
@@ -101,12 +105,14 @@ function findTheNeedle( words ){
   if (words[i]=== 'needle'){
       typeOf= i
 
+
   }
    return typeOf
   // words is an array of words
   // return the index of the word 'needle'
   // hint: indexOf
 }
+
 
 function findLargest( numbers ){
 
@@ -118,6 +124,7 @@ function findLargest( numbers ){
 //   max = numbers[i]
 // }
 //    return max
+
 
 // }
 // another way 
@@ -136,6 +143,7 @@ function addAllnumbers( numbers ) {
   }
   // numbers is an array of numbers
   // return the sum of all the numbers in the array
+
 
 function average( numbers ) {
   arr = []
@@ -156,32 +164,20 @@ function average( numbers ) {
     // be sure to exclude the strings
 }
 
-function paintShop(cars, colour) {
-  // cars is an array of objects that have 
-    // their properties are `make`, `model` and `colour`
-  
-  // for example
-   // {
-    //   make: 'Ford',
-    //   model: 'Fiesta',
-    //   color: 'red'
-   // }
-  
-    // set the colour of each Ford car to be the colour 
-   // passed in and return the new array
-  
-    // the original array passed in should not change
-    // hint: look up 'Cloning objects in JavaScript'
-    var copy = [];
-    for (var i = 0; i < cars.length; i++) {
-      copy.push(Object.assign({}, cars[i]));
-      if (copy[i].make === 'Ford')
-        copy[i].colour = colour;
-      };
-      return copy;
+function paintShop( cars, colour ){
+  var copy = []
+  for (var i=0;i<cars.length;i++){
+  copy.push(Object.assign({},cars[i]));
+    if (copy[i].make ==='Ford')
+      copy[i].colour = colour;
 
-   };
- 
+    }
+  
+    
+  
+return copy
+
+
   // cars is an array of objects that have 
   // their properties are `make`, `model` and `colour`
 
@@ -197,6 +193,8 @@ function paintShop(cars, colour) {
 
   // the original array passed in should not change
   // hint: look up 'Cloning objects in JavaScript'
+}
+
 
 
 function sales( cars ){
@@ -212,6 +210,7 @@ function sales( cars ){
         //    }
         //   }
         //     return  arr
+
 
   const Count = {};
 
@@ -251,19 +250,21 @@ function secondLargest( numbers ){
   // numbers.splice(numbers.indexOf(mxx), 1); // remove max from the array
   // return Math.max.apply(null, numbers);
   var max = 0;
-  var sec = 0;
-  
-  for(var i=0; i<numbers.length; i++){
-    if(max < numbers[i]){
-      sec = max;
-      max = numbers[i];     
+	var sec = 0;
+	
+	for(var i=0; i<numbers.length; i++){
+		if(max < numbers[i]){
+			sec = max;
+			max = numbers[i];			
       if (numbers[i] > max) {
         sec = max;
        max = numbers[i];
       };
     };
-  };
+  }
    return numbers.indexOf(sec);
+
+
 
    // numbers is an array of numbers
   // return the index of the second 
@@ -288,6 +289,7 @@ function factorial( int ) {
   // calculate and return the factorial of int
   // note: factorial of 0 is 1
 
+
 module.exports = {
   removeMiddle,
   get2ndAnd3rd,
@@ -305,5 +307,3 @@ module.exports = {
   secondLargest,
   factorial
 };
-
-
