@@ -156,16 +156,16 @@ test('Add all numbers', () => {
 
   const output = functions.addAllnumbers( numbers );
 
-  expect( output ).toEqual( 53 );
+  expect( output ).toEqual( expected );
 });
 
 test('Average', () => {
   const numbers = [ 4, '-', 8, 11, 'hello', '57', 0, 2 ];
-  const expected = 53;
+  const expected = 5;
 
   const output = functions.average( numbers );
 
-  expect( output ).toEqual( 5 );
+  expect( output ).toEqual( expected );
 });
 
 test('Paint shop', () => {
