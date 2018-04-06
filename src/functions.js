@@ -83,15 +83,25 @@ return filteredArr
 
 }
 function even( numbers ){
+  let evenNum = [];
+  for(var i=0; i<=numbers.length; i++)
+  if (numbers[i] % 2 == 0) {
+    evenNum.push(numbers[i]);
+  } else { continue }
+  return evenNum;
+};
+
+
   // numbers is an array of numbers
   // return a new array that contains only even numbers from the input array
   // hint: you may want to use the modulus operator '%'
-}
+
 
 function findTheNeedle( words ){
-  // words is an array of words
-  // return the index of the word 'needle'
-  // hint: indexOf
+  return words.indexOf("needle");
+// words is an array of words
+// return the index of the word 'needle'
+// hint: indexOf
 }
 
 function findLargest( numbers ){
@@ -145,8 +155,21 @@ function paintShop( cars, colour ){
 function sales( cars ){
   // cars is an array of objects that have been sold
   // their properties are `make`, `model`, `colour` and `price`
+let soldCars= {"Ford":0,"Toyota": 0,"Land Rover": 0, "Honda":0,};
+  for(var i=0; i<=cars.length;i++ ){
+    for(var keys in cars){
+      if (cars[i][key] === 'Ford') soldCars['Ford'] += cars[i]['price']
+      if (cars[i][key] === 'Land Rover') soldCars['Land Rover'] += cars[i]['price']
+      if (cars[i][key] === 'Toyota') soldCars['Toyota'] += cars[i]['price']
+      if (cars[i][key] === 'Honda') soldCars['Honda'] += cars[i]['price']
 
-  // for example
+    }
+
+
+  }
+  return soldCars;
+
+// for example
   // {
   //   make: 'Ford',
   //   model: 'Fiesta',
@@ -191,12 +214,12 @@ module.exports = {
   largerThanTen,
   even,
   findTheNeedle,
-  findLargest,
-  addAllnumbers,
-  average,
+  //findLargest,
+  //addAllnumbers,
+  //average,
   paintShop,
-  sales,
-  secondLargest,
-  factorial,
+  //sales,
+ // secondLargest,
+  //factorial,
   makeUppercase
 };

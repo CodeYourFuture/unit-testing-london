@@ -142,7 +142,7 @@ test('Find the needle', () => {
   expect(output).toEqual( expected );
 });
 
-test('Find largest number', () => {
+xtest('Find largest number', () => {
   const numbers = [ 3, 21, 88, 4, 36];
   const expected = 88;
 
@@ -150,7 +150,7 @@ test('Find largest number', () => {
   expect(output).toEqual( expected );
 });
 
-test('Add all numbers', () => {
+xtest('Add all numbers', () => {
   const numbers = [ 9, 23, 10, 3, 8 ];
   const expected = 53;
 
@@ -159,7 +159,7 @@ test('Add all numbers', () => {
   expect( output ).toEqual( expected );
 });
 
-test('Average', () => {
+xtest('Average', () => {
   const numbers = [ 4, '-', 8, 11, 'hello', '57', 0, 2 ];
   const expected = 5;
 
@@ -196,7 +196,7 @@ test('Paint shop', () => {
   expect( cars ).toEqual( unpaintedCars );
 });
 
-test('Car sales', () => {
+xtest('Car sales', () => {
   const carsSold = [
     { make: 'Ford', model: 'Fiesta', colour: 'Red', price: 5999 },
     { make: 'Land Rover', model: 'Defender', colour: 'Muddy', price: 12000 },
@@ -219,7 +219,7 @@ test('Car sales', () => {
   expect( output ).toEqual( totals );
 });
 
-test('Second largest', () => {
+xtest('Second largest', () => {
   const numbers = [ 2, 0, 23, 0, 57, 1 ];
 
   const output = functions.secondLargest( numbers );
@@ -227,7 +227,7 @@ test('Second largest', () => {
   expect( output ).toEqual( 2 );
 });
 
-test('Factorial', () => {
+xtest('Factorial', () => {
   const in1 = 5;
   const exp1 = 120;
 
