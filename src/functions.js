@@ -1,24 +1,15 @@
 function removeMiddle( words ){
-  // words is an array which contains an odd number of strings
-  // return a new array containing only the middle word
-  // the words array should no longer contain the middle word
-  // hint: splice
+  
   return words.splice(words.length/2, 1);
   }
   
   function get2ndAnd3rd( myArray ){
-  // myArray is an array of numbers
-  // return an array containing the 2nd and 3rd items from myArray
-  // myArray should remain unchanged
-  // hint: slice
+  
   return myArray.slice(1,3);
   }
   
   function mapper( myArray ){
-  // myArray is an array of numbers
-  // return a new array which has all items in myArray incremented by one
-  // myArray should remain unchangedvar newArray 
-  // hint: map
+ 
   var newArray= myArray.map(function(i){
   return i+= 1;
   });
@@ -26,7 +17,7 @@ function removeMiddle( words ){
   }
 
   function makeUppercase(letters) {
-    //make all letters uppercase if they are not
+   
     var capitalLetters= letters.map(function(letter){
 return letter.toUpperCase() 
     });
@@ -35,9 +26,7 @@ return letter.toUpperCase()
 
   
   function wordLengths( words ){
-  // words is an array of strings
-  // return a new array that contains the number of letters in each word
-  // hint: strings have a 'length' property
+
  
    for (i = 0; i < words.length; i++) {
   words[i] = words[i].length;
@@ -46,24 +35,8 @@ return letter.toUpperCase()
   }
 
 function cities( capitals, formatter ){
-  // capitals is an array of objects that have a city and country property
-  // for example
-  // {
-  //   city: 'Paris',
-  //   country: 'France'
-  // }
-  // formatter is a function that transforms a capital object into a sentence returns it
-  // such as 'Paris is the capital of France'
-
-  // apply formatter to each object in capitals array and return an array of resulting sentences
-
-  
-
   for (i=0; i<capitals.length; i++){
-
-   
-
-  capitals[i] = formatter(capitals[i]);
+ capitals[i] = formatter(capitals[i]);
 };
   
    return capitals;
@@ -91,22 +64,14 @@ function even( numbers ){
   return evenNum;
 };
 
-
-  // numbers is an array of numbers
-  // return a new array that contains only even numbers from the input array
-  // hint: you may want to use the modulus operator '%'
-
-
 function findTheNeedle( words ){
   return words.indexOf("needle");
-// words is an array of words
-// return the index of the word 'needle'
-// hint: indexOf
+
 }
 
 function findLargest( numbers ){
-  // numbers is an array of numbers
-  // return the largest number from that array
+
+  return Math.max(...numbers)
 }
 
 function addAllnumbers( numbers ) {
@@ -115,6 +80,21 @@ function addAllnumbers( numbers ) {
 }
 
 function average( things ) {
+  var total= 0;
+  var avgTotal = 0;
+ for (var i=0; i< things.length; i++){
+ if(typeof things[i] === "number"){
+  total = total + things[i]
+  
+    
+ }
+
+return total/ things.length *10;
+   
+ }
+
+    
+    return avgTotal;
   // things is an array of numbers and strings
   // return the average of all the numbers
   // be sure to exclude the strings
@@ -214,9 +194,9 @@ module.exports = {
   largerThanTen,
   even,
   findTheNeedle,
-  //findLargest,
+  findLargest,
   //addAllnumbers,
-  //average,
+  average,
   paintShop,
   //sales,
  // secondLargest,

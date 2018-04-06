@@ -142,7 +142,7 @@ test('Find the needle', () => {
   expect(output).toEqual( expected );
 });
 
-xtest('Find largest number', () => {
+test('Find largest number', () => {
   const numbers = [ 3, 21, 88, 4, 36];
   const expected = 88;
 
@@ -159,7 +159,7 @@ xtest('Add all numbers', () => {
   expect( output ).toEqual( expected );
 });
 
-xtest('Average', () => {
+test('Average', () => {
   const numbers = [ 4, '-', 8, 11, 'hello', '57', 0, 2 ];
   const expected = 5;
 
