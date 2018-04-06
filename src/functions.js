@@ -1,64 +1,77 @@
 function removeMiddle( words ){
-  // words is an array which contains an odd number of strings
-  // return a new array containing only the middle word
-  // the words array should no longer contain the middle word
-  // hint: splice
-}
+  
+  return words.splice(words.length/2, 1);
+  }
+  
+  function get2ndAnd3rd( myArray ){
+  
+  return myArray.slice(1,3);
+  }
+  
+  function mapper( myArray ){
+ 
+  var newArray= myArray.map(function(i){
+  return i+= 1;
+  });
+  return newArray
+  }
 
-function get2ndAnd3rd( myArray ){
-  // myArray is an array of numbers
-  // return an array containing the 2nd and 3rd items from myArray
-  // myArray should remain unchanged
-  // hint: slice
-}
+  function makeUppercase(letters) {
+   
+    var capitalLetters= letters.map(function(letter){
+return letter.toUpperCase() 
+    });
+    return capitalLetters
+  }
 
-function mapper( myArray ){
-  // myArray is an array of numbers
-  // return a new array which has all items in myArray incremented by one
-  // myArray should remain unchanged
-  // hint: map
-}
+  
+  function wordLengths( words ){
 
-function wordLengths( words ){
-  // words is an array of strings
-  // return a new array that contains the number of letters in each word
-  // hint: strings have a 'length' property
-}
+ 
+   for (i = 0; i < words.length; i++) {
+  words[i] = words[i].length;
+  };
+  return words;
+  }
 
 function cities( capitals, formatter ){
-  // capitals is an array of objects that have a city and country property
-  // for example
-  // {
-  //   city: 'Paris',
-  //   country: 'France'
-  // }
-  // formatter is a function that transforms a capital object into a sentence returns it
-  // such as 'Paris is the capital of France'
+  for (i=0; i<capitals.length; i++){
+ capitals[i] = formatter(capitals[i]);
+};
+  
+   return capitals;
 
-  // apply formatter to each object in capitals array and return an array of resulting sentences
 }
 
 function largerThanTen( numbers ){
   // numbers is an array of numbers
   // return a new array that contains only numbers from the input array which are greater than 10
   // hint: filter
-}
+  var filteredArr = numbers.filter(function(num){
+    return num>10;
 
-function even( numbers ){
-  // numbers is an array of numbers
-  // return a new array that contains only even numbers from the input array
-  // hint: you may want to use the modulus operator '%'
+  
+});
+return filteredArr
+
 }
+function even( numbers ){
+  let evenNum = [];
+  for(var i=0; i<=numbers.length; i++)
+  if (numbers[i] % 2 == 0) {
+    evenNum.push(numbers[i]);
+  } else { continue }
+  return evenNum;
+};
 
 function findTheNeedle( words ){
-  // words is an array of words
-  // return the index of the word 'needle'
-  // hint: indexOf
+  return words.indexOf("needle");
+
 }
 
 function findLargest( numbers ){
-  // numbers is an array of numbers
-  // return the largest number from that array
+
+  return Math.max(...numbers)
 }
 
 function addAllnumbers( numbers ) {
@@ -67,6 +80,21 @@ function addAllnumbers( numbers ) {
 }
 
 function average( things ) {
+  var total= 0;
+  var avgTotal = 0;
+ for (var i=0; i< things.length; i++){
+ if(typeof things[i] === "number"){
+  total = total + things[i]
+  
+    
+ }
+
+return total/ things.length *10;
+   
+ }
+
+    
+    return avgTotal;
   // things is an array of numbers and strings
   // return the average of all the numbers
   // be sure to exclude the strings
@@ -88,13 +116,40 @@ function paintShop( cars, colour ){
 
   // the original array passed in should not change
   // hint: look up 'Cloning objects in JavaScript'
+  
+  var newArr =[];
+  for (i=0; i<cars.length; i++){
+
+    paintedcars = Object.assign({}, cars[i]);
+    if (paintedcars.make == 'Ford'){
+
+       paintedcars.colour = colour
+
+
+    }
+    newArr.push(paintedcars)
+    }
+    return newArr
 }
 
 function sales( cars ){
   // cars is an array of objects that have been sold
   // their properties are `make`, `model`, `colour` and `price`
+let soldCars= {"Ford":0,"Toyota": 0,"Land Rover": 0, "Honda":0,};
+  for(var i=0; i<=cars.length;i++ ){
+    for(var keys in cars){
+      if (cars[i][key] === 'Ford') soldCars['Ford'] += cars[i]['price']
+      if (cars[i][key] === 'Land Rover') soldCars['Land Rover'] += cars[i]['price']
+      if (cars[i][key] === 'Toyota') soldCars['Toyota'] += cars[i]['price']
+      if (cars[i][key] === 'Honda') soldCars['Honda'] += cars[i]['price']
 
-  // for example
+    }
+
+
+  }
+  return soldCars;
+
+// for example
   // {
   //   make: 'Ford',
   //   model: 'Fiesta',
@@ -140,10 +195,11 @@ module.exports = {
   even,
   findTheNeedle,
   findLargest,
-  addAllnumbers,
+  //addAllnumbers,
   average,
   paintShop,
-  sales,
-  secondLargest,
-  factorial
+  //sales,
+ // secondLargest,
+  //factorial,
+  makeUppercase
 };
