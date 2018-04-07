@@ -3,10 +3,11 @@ function removeMiddle( words ){
   // return a new array containing only the middle word
   // the words array should no longer contain the middle word
   // hint: splice
-var middleword= words[Math.floor(words.length/2)];  
-var middlewordarray=[middleword];
+
+var middleword = words[Math.floor(words.length/2)];  
+var middlewordarray= [middleword];
 words.splice(Math.floor(words.length/2),1);
-return middlewordarray
+return middlewordarray;
 
 }
 function get2ndAnd3rd( myArray ){
@@ -33,8 +34,9 @@ function wordLengths(words){
    // words is an array of strings
   // return a new array that contains the number of letters in each word
   // hint: strings have a 'length' property
-  console.log(worlds);
-var newworld= worlds.map(function(i){
+  console.log(words);
+
+var newwords= words.map(function(i){
   return i.length
 })
 return newwords; 
@@ -74,22 +76,31 @@ function even( numbers ){
   // numbers is an array of numbers
   // return a new array that contains only even numbers from the input array
   // hint: you may want to use the modulus operator '%'
-  var twelve=[]
-  for (let i=0; i<number.length;i++);
- if(numbers[i]%2===0){
-  return twelve.push(number[i])
+  var twelve = []
+  
+  for (let i=0; i<numbers.length;i++){
+
+ 
+    if(numbers [i] %2 === 0){
+      twelve.push (numbers[i]);
+    }
+
+
+  }
+  return twelve;
+
  }
   
-}
+
 
 function findTheNeedle( words ){
   // words is an array of words
   // return the index of the word 'needle'
   // hint: indexOf
 
-  var finword=[]
-  finword=words.indexOf("needle");
-  return findword
+  var findword ;
+  findword = words.indexOf("needle");
+  return findword;
 }
 
 function findLargest( numbers ){
@@ -117,8 +128,8 @@ function average( things ) {
   // return the average of all the numbers
   // be sure to exclude the strings
   //part1
-  var realNumArray=[];
-  realANumArray=things.filter(function(num){
+  var realNumArray= [];
+  realANumArray = things.filter(function(num){
     return typeof(num)==='number'
   });
   console.log(realNumArray);
@@ -163,25 +174,24 @@ function paintShop( cars, colour ){
    
 }
 
-
 function sales( cars ){
-  // cars is an array of objects that have been sold
-  // their properties are `make`, `model`, `colour` and `price`
+//   cars is an array of objects that have been sold
+//   their properties are `make`, `model`, `colour` and `price`
 
-  // for example
-  // {
-  //   make: 'Ford',
-  //   model: 'Fiesta',
-  //   color: 'red',
-  //   price: 5999
-  // }
-  // calculate and return the total sales for each make and return the totals
-  // the output should like a bit like
+//   for example
+  {
+//     make: 'Ford',
+//     model: 'Fiesta',
+//     color: 'red',
+//     price: 5999
+  }
+//   calculate and return the total sales for each make and return the totals
+//   the output should like a bit like
 
-  // {
-  //   'Ford': 20000,
-  //   'Vauxhall': 15000
-  // }
+  {
+//     'Ford': 20000,
+//     'Vauxhall': 15000
+  }
 // Harder challenges
 }
 
@@ -193,14 +203,16 @@ function secondLargest( numbers ){
 var firstLarg = 0;
 var secondLarg = 0;
 // part 1 -get Largest number 
-for ( i= 0 ; i < numbers. length ; i++) {
-  if ( numbers [i] > firstLarg) {
-    firstLarg = numbers [i] ;
+  for ( i= 0 ; i < numbers. length ; i++) {
+    if ( numbers [i] > firstLarg) {
+      firstLarg = numbers [i] ;
+    }
+    if (numbers[i]> secondLarg && numbers[i]!=firstLarg ){
+      secondLarg = numbers[i];
+    } 
   }
-  return secondLarg ; 
- }
+  return secondLarg ;
 }
-
 
 // //part 2  -get  nex biggest number 
 // // It needs to be less than 57.
