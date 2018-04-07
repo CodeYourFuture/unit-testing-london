@@ -24,19 +24,22 @@ function mapper( myArray ){
   // return a new array which has all items in myArray incremented by one
   // myArray should remain unchanged
   // hint: map 
-var newarray= myArray.map(function(x){
- return x+1
+ var newarray= myArray.map(function(x){
+  return  x+1;
 })
-console.log(newarray);
-return newarray
+// console.log(newarray);
+ return newarray;
 } 
+
 function wordLengths(words){
    // words is an array of strings
   // return a new array that contains the number of letters in each word
   // hint: strings have a 'length' property
-  console.log(words);
+  // console.log(words);
 
 var newwords= words.map(function(i){
+
+
   return i.length
 })
 return newwords; 
@@ -67,9 +70,10 @@ function largerThanTen( numbers ){
   // numbers is an array of numbers
   // return a new array that contains only numbers from the input array which are greater than 10
   // hint: filter
-  var result= []
+  
+  var result = []
   result= numbers.filter(number=>number>10);
-  retunresult;
+   retunresult;
 }
 
 function even( numbers ){
@@ -118,8 +122,10 @@ function findLargest( numbers ){
 function addAllnumbers( numbers ) {
   // numbers is an array of numbers
   // return the sum of all the numbers in the array
+  
+
   var addall=[]
-  addall=numbers.reduce((a,b)=> a+b,0)
+   addall= numbers.reduce((a,b)=> a+b,0)
   return addall;
 }
 
@@ -174,26 +180,41 @@ function paintShop( cars, colour ){
    
 }
 
-function sales( cars ){
-//   cars is an array of objects that have been sold
-//   their properties are `make`, `model`, `colour` and `price`
+// function sales( cars ){
+// //   cars is an array of objects that have been sold
+// //   their properties are `make`, `model`, `colour` and `price`
 
-//   for example
-  {
-//     make: 'Ford',
-//     model: 'Fiesta',
-//     color: 'red',
-//     price: 5999
-  }
-//   calculate and return the total sales for each make and return the totals
-//   the output should like a bit like
+// //   for example
+//   {
+// //     make: 'Ford',
+// //     model: 'Fiesta',
+// //     color: 'red',
+// //     price: 5999
+//   }
+// //   calculate and return the total sales for each make and return the totals
+// //   the output should like a bit like
 
-  {
-//     'Ford': 20000,
-//     'Vauxhall': 15000
-  }
-// Harder challenges
-}
+//   {
+// //     'Ford': 20000,
+// //     'Vauxhall': 15000
+//   }
+// // Harder challenges
+// }
+
+// var soldcars={};
+
+// for (i=0;i<cars.length;i++)
+// {
+//   var price=cars[i].price;
+//   var make=cars[i].make;
+//   // if (soldCara[make]==underfined)
+//   if (soldCars.hasOwnProperty(make))
+//   soldCars[make]=price; 
+// {
+
+//   }
+// }
+
 
 function secondLargest( numbers ){
   // numbers is an array of numbers
@@ -264,6 +285,6 @@ module.exports = {
   addAllnumbers,
   average,
   paintShop,
-  sales,
+  // sales,
   secondLargest
 }
